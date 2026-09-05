@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vieva Store Beauty: belleza y cuidado personal en Alerce, Puerto Montt.">
+  <title>Vieva Store Beauty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio">
+      <img src="images/logo-vieva-store.jpg" alt="Logo de Vieva Store">
+    </a>
+    <button class="menu-button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a><a href="#productos">Productos</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <span class="eyebrow">Belleza y cuidado personal</span>
+        <h1>Tu momento de brillar empieza aquí</h1>
+        <p>Maquillaje, skincare y accesorios seleccionados con cariño para ti, disponibles en Alerce, Puerto Montt.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#productos">Ver productos</a>
+          <a class="button secondary" href="https://wa.me/56953911282?text=Hola%20Vieva%20Store%2C%20quiero%20hacer%20una%20consulta" target="_blank" rel="noopener">Escríbenos</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><span>V</span><i>♡</i></div>
+    </section>
+
+    <section class="products-section" id="productos">
+      <div class="section-heading">
+        <span class="eyebrow">Catálogo</span>
+        <h2>Encuentra tu nuevo favorito</h2>
+        <p>Consulta disponibilidad directamente por WhatsApp.</p>
+      </div>
+      <div class="filters" aria-label="Filtrar productos">
+        <button class="filter active" data-filter="todos">Todos</button>
+        <button class="filter" data-filter="maquillaje">Maquillaje</button>
+        <button class="filter" data-filter="skincare">Skincare</button>
+        <button class="filter" data-filter="accesorios">Accesorios</button>
+      </div>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section class="about" id="nosotros">
+      <div><span class="eyebrow">Sobre Vieva</span><h2>Belleza cercana, elegida para ti</h2></div>
+      <p>Somos una tienda de belleza y cuidado personal ubicada en Alerce, Puerto Montt. Seleccionamos productos de maquillaje, skincare y accesorios para acompañar tu rutina y ayudarte a expresar tu estilo.</p>
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <img src="images/logo-vieva-store.jpg" alt="Vieva Store">
+    <div><strong>Contacto</strong><a href="https://wa.me/56953911282" target="_blank" rel="noopener">+56 9 5391 1282</a><a href="mailto:vievastorebeauty@gmail.com">vievastorebeauty@gmail.com</a></div>
+    <div><strong>Síguenos</strong><a href="https://www.instagram.com/vievastorebeauty" target="_blank" rel="noopener">@vievastorebeauty</a><span>Alerce, Puerto Montt</span></div>
+  </footer>
+  <a class="whatsapp-float" href="https://wa.me/56953911282?text=Hola%20Vieva%20Store" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">✆</a>
+  <script src="script.js"></script>
+</body>
+</html>
