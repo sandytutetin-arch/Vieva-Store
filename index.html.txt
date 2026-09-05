@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vieva Store | Cosmética & Skincare</title>
+
+    <meta name="description" content="Vieva Store - Cosmética, skincare y productos de belleza para realzar tu esencia.">
+
+    <style>
+
+        /* =========================
+           CONFIGURACIÓN GENERAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fffafa;
+            color: #3d3035;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        nav {
+            width: 100%;
+            height: 75px;
+            background: rgba(255,255,255,0.95);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: #b76e8a;
+        }
+
+        .menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .menu a {
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #c97998;
+        }
+
+        .menu-button {
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+            padding: 120px 8% 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(255,247,249,0.97),
+                    rgba(255,247,249,0.65)
+                ),
+                url("https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text span {
+            color: #b76e8a;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 80px);
+            line-height: 1;
+            margin: 15px 0 25px;
+            color: #382b31;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            border-radius: 30px;
+            background: #b76e8a;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background: #995670;
+        }
+
+
+        /* =========================
+           BENEFICIOS
+        ========================== */
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 45px 8%;
+            background: white;
+            text-align: center;
+        }
+
+        .benefit {
+            padding: 20px;
+        }
+
+        .benefit-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .benefit h3 {
+            margin-bottom: 5px;
+        }
+
+        .benefit p {
+            color: #777;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           SECCIONES
+        ========================== */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #b76e8a;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-top: 10px;
+        }
+
+
+        /* =========================
+           CATEGORÍAS
+        ========================== */
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .category {
+            height: 280px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+
+            background-size: cover;
+            background-position: center;
+
+            transition: 0.4s;
+        }
+
+        .category:hover {
+            transform: translateY(-8px);
+        }
+
+        .category:nth-child(1) {
+            background-image:
+            linear-gradient(transparent, rgba(0,0,0,.65)),
+            url("https://images.unsplash.com/photo-1556229010-aa3f7ff66b24?auto=format&fit=crop&w=800&q=80");
+        }
+
+        .category:nth-child(2) {
+            background-image:
+            linear-gradient(transparent, rgba(0,0,0,.65)),
+            url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80");
+        }
+
+        .category:nth-child(3) {
+            background-image:
+            linear-gradient(transparent, rgba(0,0,0,.65)),
+            url("https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=800&q=80");
+        }
+
+        .category-content {
+            color: white;
+        }
+
+        .category h3 {
+            font-size: 25px;
+        }
+
+
+        /* =========================
+           PRODUCTOS
+        ========================== */
+
+        .products {
+            background: #fff;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .product {
+            background: #fffafa;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid #f3e4e8;
+        }
+
+        .product:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(100,50,70,.10);
+        }
+
+        .product-image {
+            height: 270px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .4s;
+        }
+
+        .product:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info small {
+            color: #b76e8a;
+        }
+
+        .product-info h3 {
+            margin: 5px 0;
+        }
+
+        .price {
+            font-weight: bold;
+            font-size: 19px;
+        }
+
+        .buy {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #b76e8a;
+            border-radius: 20px;
+            color: #b76e8a;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .buy:hover {
+            background: #b76e8a;
+            color: white;
+        }
+
+
+        /* =========================
+           NOSOTROS
+        ========================== */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            height: 500px;
+            border-radius: 25px;
+            background:
+                url("https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1000&q=80")
+                center / cover;
+        }
+
+        .about-text h2 {
+            font-size: 42px;
+            margin: 10px 0 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .about-list {
+            list-style: none;
+        }
+
+        .about-list li {
+            margin: 12px 0;
+        }
+
+
+        /* =========================
+           INSTAGRAM / CTA
+        ========================== */
+
+        .instagram {
+            text-align: center;
+            background: #f9e9ee;
+        }
+
+        .instagram h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .instagram p {
+            max-width: 600px;
+            margin: auto auto 30px;
+        }
+
+        .social-button {
+            display: inline-block;
+            padding: 13px 28px;
+            border: 2px solid #b76e8a;
+            border-radius: 30px;
+            color: #b76e8a;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .social-button:hover {
+            background: #b76e8a;
+            color: white;
+        }
+
+
+        /* =========================
+           CONTACTO
+        ========================== */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 45px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,.06);
+        }
+
+        .contact-box p {
+            margin: 10px 0;
+        }
+
+        .contact-box strong {
+            color: #b76e8a;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #30252a;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer .logo {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .menu {
+                display: none;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                text-align: center;
+                padding: 25px;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .hero {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .about-image {
+                height: 350px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================== -->
+
+<nav>
+
+    <a href="#inicio" class="logo">
+        VIEVA
+    </a>
+
+    <div class="menu-button" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <ul class="menu" id="menu">
+
+        <li>
+            <a href="#inicio">Inicio</a>
+        </li>
+
+        <li>
+            <a href="#categorias">Categorías</a>
+        </li>
+
+        <li>
+            <a href="#productos">Productos</a>
+        </li>
+
+        <li>
+            <a href="#nosotros">Nosotros</a>
+        </li>
+
+        <li>
+            <a href="#contacto">Contacto</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<header class="hero" id="inicio">
+
+    <div class="hero-text">
+
+        <span>BEAUTY • SKINCARE • COSMETICS</span>
+
+        <h1>
+            Tu belleza,<br>
+            tu esencia.
+        </h1>
+
+        <p>
+            Descubre productos de cosmética y skincare
+            seleccionados para ayudarte a sentirte increíble
+            todos los días.
+        </p>
+
+        <a href="#productos" class="btn">
+            Descubrir productos
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     BENEFICIOS
+========================== -->
+
+<div class="benefits">
+
+    <div class="benefit">
+
+        <div class="benefit-icon">
+            ♡
+        </div>
+
+        <h3>
+            Productos seleccionados
+        </h3>
+
+        <p>
+            Elegimos productos pensando en ti.
+        </p>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <div class="benefit-icon">
+            ✦
+        </div>
+
+        <h3>
+            Belleza consciente
+        </h3>
+
+        <p>
+            Queremos que disfrutes tu rutina.
+        </p>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <div class="benefit-icon">
+            ♡
+        </div>
+
+        <h3>
+            Atención personalizada
+        </h3>
+
+        <p>
+            Estamos disponibles para ayudarte.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     CATEGORÍAS
+========================== -->
+
+<section id="categorias">
+
+    <div class="section-title">
+
+        <span>DESCUBRE</span>
+
+        <h2>
+            Nuestras categorías
+        </h2>
+
+    </div>
+
+
+    <div class="categories">
+
+
+        <a href="#productos" class="category">
+
+            <div class="category-content">
+
+                <h3>
+                    Skincare
+                </h3>
+
+                <p>
+                    Cuida y mima tu piel.
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a href="#productos" class="category">
+
+            <div class="category-content">
+
+                <h3>
+                    Maquillaje
+                </h3>
+
+                <p>
+                    Realza tu belleza.
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a href="#productos" class="category">
+
+            <div class="category-content">
+
+                <h3>
+                    Cuidado corporal
+                </h3>
+
+                <p>
+                    Una rutina para todo tu cuerpo.
+                </p>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PRODUCTOS
+========================== -->
+
+<section class="products" id="productos">
+
+    <div class="section-title">
+
+        <span>FAVORITOS</span>
+
+        <h2>
+            Productos destacados
+        </h2>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+        <!-- PRODUCTO 1 -->
+
+        <article class="product">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=700&q=80"
+                alt="Producto skincare">
+
+            </div>
+
+            <div class="product-info">
+
+                <small>
+                    SKINCARE
+                </small>
+
+                <h3>
+                    Sérum facial
+                </h3>
+
+                <p>
+                    Hidratación y luminosidad.
+                </p>
+
+                <div class="price">
+                    $12.990
+                </div>
+
+                <a
+                class="buy"
+                href="https://wa.me/56912345678?text=Hola%20Vieva%20Store,%20me%20interesa%20el%20Sérum%20facial">
+                    Comprar
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- PRODUCTO 2 -->
+
+        <article class="product">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=80"
+                alt="Producto maquillaje">
+
+            </div>
+
+            <div class="product-info">
+
+                <small>
+                    MAQUILLAJE
+                </small>
+
+                <h3>
+                    Set de maquillaje
+                </h3>
+
+                <p>
+                    Todo lo necesario para tu look.
+                </p>
+
+                <div class="price">
+                    $19.990
+                </div>
+
+                <a
+                class="buy"
+                href="https://wa.me/56912345678?text=Hola%20Vieva%20Store,%20me%20interesa%20el%20Set%20de%20maquillaje">
+                    Comprar
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- PRODUCTO 3 -->
+
+        <article class="product">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&w=700&q=80"
+                alt="Crema corporal">
+
+            </div>
+
+            <div class="product-info">
+
+                <small>
+                    BODYCARE
+                </small>
+
+                <h3>
+                    Crema corporal
+                </h3>
+
+                <p>
+                    Suavidad y nutrición.
+                </p>
+
+                <div class="price">
+                    $9.990
+                </div>
+
+                <a
+                class="buy"
+                href="https://wa.me/56912345678?text=Hola%20Vieva%20Store,%20me%20interesa%20la%20Crema%20corporal">
+                    Comprar
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- PRODUCTO 4 -->
+
+        <article class="product">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=700&q=80"
+                alt="Kit skincare">
+
+            </div>
+
+            <div class="product-info">
+
+                <small>
+                    SKINCARE
+                </small>
+
+                <h3>
+                    Kit skincare
+                </h3>
+
+                <p>
+                    Una rutina completa para tu piel.
+                </p>
+
+                <div class="price">
+                    $24.990
+                </div>
+
+                <a
+                class="buy"
+                href="https://wa.me/56912345678?text=Hola%20Vieva%20Store,%20me%20interesa%20el%20Kit%20skincare">
+                    Comprar
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     NOSOTROS
+========================== -->
+
+<section id="nosotros">
+
+    <div class="about">
+
+
+        <div class="about-image"></div>
+
+
+        <div class="about-text">
+
+            <span style="color:#b76e8a; font-weight:bold;">
+                CONÓCENOS
+            </span>
+
+            <h2>
+                Más que belleza,<br>
+                una experiencia.
+            </h2>
+
+            <p>
+                En Vieva Store creemos que el cuidado personal
+                es una forma de expresar quién eres.
+            </p>
+
+            <p>
+                Nuestro objetivo es acercarte productos de
+                cosmética y skincare que puedas incorporar
+                fácilmente a tu rutina.
+            </p>
+
+
+            <ul class="about-list">
+
+                <li>
+                    ✓ Productos seleccionados
+                </li>
+
+                <li>
+                    ✓ Atención cercana
+                </li>
+
+                <li>
+                    ✓ Inspiración para tu rutina
+                </li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INSTAGRAM
+========================== -->
+
+<section class="instagram">
+
+    <span style="color:#b76e8a;font-weight:bold;">
+        SÍGUENOS
+    </span>
+
+    <h2>
+        Únete a nuestra comunidad
+    </h2>
+
+    <p>
+        Síguenos en Instagram y descubre novedades,
+        recomendaciones, productos y contenido de belleza.
+    </p>
+
+    <!-- CAMBIA ESTE LINK POR EL INSTAGRAM REAL -->
+
+    <a
+    class="social-button"
+    href="https://instagram.com/vievastore"
+    target="_blank">
+
+        @vievastore
+
+    </a>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACTO
+========================== -->
+
+<section class="contact" id="contacto">
+
+    <div class="section-title">
+
+        <span>CONTACTO</span>
+
+        <h2>
+            ¿Hablamos?
+        </h2>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <p>
+            ¿Tienes dudas sobre nuestros productos?
+        </p>
+
+        <p>
+            Escríbenos directamente por WhatsApp.
+        </p>
+
+        <!-- CAMBIA EL NÚMERO -->
+
+        <a
+        href="https://wa.me/56912345678"
+        class="btn"
+        style="margin-top:20px;">
+
+            💬 Hablar por WhatsApp
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <div class="logo">
+        VIEVA
+    </div>
+
+    <p>
+        Cosmética • Skincare • Belleza
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 Vieva Store. Todos los derechos reservados.
+    </p>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script>
+
+    function toggleMenu() {
+
+        const menu = document.getElementById("menu");
+
+        menu.classList.toggle("active");
+
+    }
+
+
+    // Cierra el menú al hacer clic en un enlace
+
+    document.querySelectorAll(".menu a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            document.getElementById("menu")
+            .classList.remove("active");
+
+        });
+
+    });
+
+</script>
+
+
+</body>
+</html>
