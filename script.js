@@ -196,3 +196,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
   renderProducts();
 });
+/* Corrección del banner en celulares */
+@media (max-width: 760px) {
+  .hero {
+    min-height: 0;
+    padding: 0 0 28px;
+    overflow: visible;
+    background: #fff3f7;
+  }
+
+  .hero-banner {
+    position: relative;
+    inset: auto;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1860 / 846;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .hero-copy {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    max-width: none;
+    margin: 16px 16px 0;
+    padding: 22px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+    line-height: 1.05;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    padding: 13px 10px;
+    text-align: center;
+  }
+
+  .whatsapp-float {
+    right: 14px;
+    bottom: 14px;
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-actions {
+    grid-template-columns: 1fr;
+  }
+}
