@@ -3,7 +3,7 @@ const products = [
     name: "Beauty Creations – Don't Be Jelly Lip Set",
     price: "$15.990",
     cat: "maquillaje",
-    img: "set-no-tengas-celos.jpg"
+    img: "conjunto-celos.jpg"
   },
   {
     name: "Kevin & Coco – Set Carol Sweet",
@@ -21,7 +21,7 @@ const products = [
     name: "Catrice – Shine Bomb Lip Lacquer",
     price: "$7.500",
     cat: "maquillaje",
-    img: "bomba de brillo.jpg"
+    img: "bomba-brillo.jpg"
   },
   {
     name: "Dolce Bella – Pincel para Labios",
@@ -33,7 +33,7 @@ const products = [
     name: "AMPLEN – Tónico Facial Ácido Hialurónico",
     price: "$21.500",
     cat: "skincare",
-    img: "tonico-hialurón.jpg"
+    img: "tonico-hialuron.jpg"
   },
   {
     name: "Beauty Creations – Liquid Blush OK Coral",
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     grid.innerHTML = filteredProducts
       .map(function (product) {
-        const imagePath = encodeURI("imagenes/" + product.img);
+        const imagePath = encodeURI("/Vieva-Store/imagenes/" + product.img);
         const message = encodeURIComponent(
           "Hola Vieva Store, quisiera consultar por: " + product.name
         );
