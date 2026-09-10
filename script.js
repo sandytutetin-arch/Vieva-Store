@@ -3,7 +3,7 @@ const products = [
     name: "Beauty Creations – Don't Be Jelly Lip Set",
     price: "$15.990",
     cat: "maquillaje",
-    img: "conjunto-celos.jpg"
+    img: "jelly.jpg"
   },
   {
     name: "Kevin & Coco – Set Carol Sweet",
@@ -39,7 +39,7 @@ const products = [
     name: "Beauty Creations – Liquid Blush OK Coral",
     price: "$10.900",
     cat: "maquillaje",
-    img: "rubor-líquido.jpg"
+    img: "rubor.jpg"
   },
   {
     name: "AMPLEN – Protector Solar SPF50+",
